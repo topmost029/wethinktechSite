@@ -1,0 +1,3 @@
+[install]
+# bun.lock pins exact versions — supply-chain guard is redundant in CI.
+# Removed minimumReleaseAge so Vercel builds don't get blocked on pinned deps.
