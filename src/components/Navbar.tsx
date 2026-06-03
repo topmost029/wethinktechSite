@@ -5,11 +5,11 @@ import logo from "@/assets/wethinktech-logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/lib/services-data";
 
-type NavLink = { to: "/" | "/about" | "/services" | "/contact"; label: string; hasMenu?: boolean };
+type NavLink = { to: "/" | "/about" | "/services/" | "/contact"; label: string; hasMenu?: boolean };
 const links: NavLink[] = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
-  { to: "/services", label: "Services", hasMenu: true },
+  { to: "/services/", label: "Services", hasMenu: true },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -52,7 +52,7 @@ export function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((l) => {
-              const active = location.pathname === l.to || (l.to === "/services" && location.pathname.startsWith("/services"));
+              const active = location.pathname === l.to || (l.to === "/services/" && location.pathname.startsWith("/services"));
               if (l.hasMenu) {
                 return (
                   <div
@@ -107,7 +107,7 @@ export function Navbar() {
                               );
                             })}
                             <Link
-                              to="/services"
+                              to="/services/"
                               className="mt-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-gradient-soft text-sm font-semibold text-primary hover:bg-primary/10 transition"
                             >
                               View All Services →
@@ -186,7 +186,7 @@ export function Navbar() {
                             exit={{ opacity: 0, height: 0 }}
                             className="overflow-hidden pl-3"
                           >
-                            <Link to="/services" className="block px-4 py-2.5 rounded-lg text-sm text-foreground hover:bg-muted">
+                            <Link to="/services/" className="block px-4 py-2.5 rounded-lg text-sm text-foreground hover:bg-muted">
                               All Services
                             </Link>
                             {services.map((s) => (

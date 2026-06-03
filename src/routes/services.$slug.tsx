@@ -32,7 +32,7 @@ export const Route = createFileRoute("/services/$slug")({
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
       <h1 className="text-3xl font-bold mb-3">Service not found</h1>
       <p className="text-muted-foreground mb-6">The service you're looking for doesn't exist.</p>
-      <Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-hero text-white font-semibold">
+      <Link to="/services/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-hero text-white font-semibold">
         <ArrowLeft className="h-4 w-4" /> Back to Services
       </Link>
     </div>
@@ -89,7 +89,7 @@ function ServiceDetail() {
           {/* Breadcrumb */}
           <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
             className="flex items-center gap-2 text-white/55 text-xs mb-12 uppercase tracking-widest font-medium">
-            <Link to="/services" className="hover:text-white transition-colors flex items-center gap-1.5">
+            <Link to="/services/" className="hover:text-white transition-colors flex items-center gap-1.5">
               <ArrowLeft className="h-3.5 w-3.5" /> Services
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -137,7 +137,7 @@ function ServiceDetail() {
                 style={{ background: `linear-gradient(135deg, ${theme.accent}, ${theme.primary})`, color: theme.dark === "#0d4a28" ? "white" : "white" }}>
                 Request Consultation <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/services" className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/25 hover:bg-white/10 transition-colors backdrop-blur-sm">
+              <Link to="/services/" className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/25 hover:bg-white/10 transition-colors backdrop-blur-sm">
                 All Services
               </Link>
             </motion.div>
@@ -442,7 +442,7 @@ function ServiceDetail() {
               <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-2" style={{ color: theme.primary }}>Explore More</span>
               <h2 className="text-3xl md:text-4xl font-black">Related Services</h2>
             </div>
-            <Link to="/services" className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: theme.primary }}>
+            <Link to="/services/" className="inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: theme.primary }}>
               View All <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
